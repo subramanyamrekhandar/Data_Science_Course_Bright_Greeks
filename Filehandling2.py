@@ -41,44 +41,86 @@
 
 # 1. create file with intial content
 
-def create_file():
-    with open("example.txt", "w")  as file:
-        file.write("apple, 10, 20\n")
-        file.write("banana, 40, 50\n")
-        file.write("orange, 80, 90\n")
+# def create_file():
+#     with open("example.txt", "w")  as file:
+#         file.write("apple, 10, 20\n")
+#         file.write("banana, 40, 50\n")
+#         file.write("orange, 80, 90\n")
 
-# read and print the file content
-def read_file():
-    with open("example.txt", "r") as file:
-        content = file.read()
-        print(content)
+# # read and print the file content
+# def read_file():
+#     with open("example.txt", "r") as file:
+#         content = file.read()
+#         print(content)
 
-# update the content on the file
-def update_file(item, New_digit):
-    lines = []
+# # update the content on the file
+# def update_file(item, New_digit):
+#     lines = []
 
-    with open("example.txt", "r") as file:
-        lines = file.readlines()
-        print(lines) # get the data
+#     with open("example.txt", "r") as file:
+#         lines = file.readlines()
+#         print(lines) # get the data
 
-    with open("example.txt", "w") as file:
-        for line in lines:
-            x = line.strip().split(",")
+#     with open("example.txt", "w") as file:
+#         for line in lines:
+#             x = line.strip().split(",")
 
-            if x[0] == item:
-                file.write(f"{x[0]},{New_digit},{x[2]}\n")
+#             if x[0] == item:
+#                 file.write(f"{x[0]},{New_digit},{x[2]}\n")
 
-            else:
-                file.write(line)
+#             else:
+#                 file.write(line)
                 
 
-# cal the main funtion        
-create_file()
-read_file()
-update_file("banana", 100)  # update the apple price to 100
-read_file()  # print the updated file content
+# # cal the main funtion        
+# create_file()
+# read_file()
+# update_file("banana", 100)  # update the apple price to 100
+# read_file()  # print the updated file content
 
 
+
+
+
+
+# modes
+# 1. binary
+#2.text mode
+#3. create mode
+
+
+
+# Binary Mode
+
+with open("example.bin", "wb") as file:
+    file.write(b"binary\data")
+
+with open("example.bin", "rb") as file:
+    content = file.read()
+    print(content)
+
+
+# Text Mode
+
+with open("sample.txt", "w") as file:
+    file.write("Hello, world!")
+
+with open("sample.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+
+# create mode ( create new file on the ur location)
+
+try:
+    with open("new_file.txt", "x") as file:
+        file.write("file has created")
+except FileExistsError:
+    print("file already exists")
+
+with open("new_file.txt", "r") as file:
+    content = file.read()
+    print(content)
 
 
 
