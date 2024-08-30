@@ -1,0 +1,8 @@
+1.Descriptive Statistics [ to summarize and describe data like ( mean, median, mode, variance, .. etc)
+2.probabilty statistics ( 1. normal distribution, 2. binomial distribution, 3.poisson distribution)
+3.hypothesis testing [to find the null and type erros]
+4.Regression Analysis [linear regression, multiple linear regression, logistics regression]
+5.Time series analysis [compnent of time series ,  moving average, ARIMA models]
+
+
+
